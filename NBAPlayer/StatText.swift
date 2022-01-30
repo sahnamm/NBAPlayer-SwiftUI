@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct StatText: View {
+    
+    var statName: String
+    var statValue: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Text(statName+":").font(.system(size: 45)).fontWeight(.bold).padding(.leading, 30)
+            Text(statValue).font(.system(size: 45)).fontWeight(.light).padding(.trailing, 30)
+            Spacer()
+        }.minimumScaleFactor(0.6)
     }
 }
 
 struct StatText_Previews: PreviewProvider {
     static var previews: some View {
-        StatText()
+        StatText(statName: "Age", statValue: "32")
     }
 }

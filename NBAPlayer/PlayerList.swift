@@ -9,7 +9,13 @@ import SwiftUI
 
 struct PlayerList: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            List(players) { currentPlayer in
+                NavigationLink(destination: PlayerDetail(player: currentPlayer)){
+                    PlayerRow(player: currentPlayer).frame(height: 80)
+                }
+            }.navigationTitle(Text("NBA Finals Players"))
+        }
     }
 }
 
