@@ -23,6 +23,9 @@ struct PlayerRow: View {
 
 struct PlayerRow_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerRow(player: players[0]).previewLayout(.fixed(width: 500, height: 100))
+        Group {
+            PlayerRow(player: players[0]).previewLayout(.fixed(width: 500, height: 100)).environment(\.sizeCategory, .extraSmall).previewDisplayName("Extra Small")
+            PlayerRow(player: players[0]).previewLayout(.fixed(width: 500, height: 100)).environment(\.sizeCategory, .extraExtraExtraLarge).previewDisplayName("Extra Large")
+        }
     }
 }

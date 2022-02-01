@@ -21,6 +21,10 @@ struct PlayerList: View {
 
 struct PlayerList_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerList()
+        Group {
+            PlayerList().environment(\.sizeCategory, .extraSmall).previewDisplayName("Extra Small")
+            PlayerList().environment(\.sizeCategory, .extraExtraExtraLarge).previewDisplayName("Extra Large")
+        }
+       
     }
 }

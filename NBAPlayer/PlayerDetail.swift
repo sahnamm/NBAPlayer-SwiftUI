@@ -31,10 +31,9 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
 //        PlayerDetail(player: players[2])
         Group {
-            PlayerDetail(player: players[2]).environment(\.sizeCategory, .extraExtraExtraLarge).previewDevice("iPhone SE")
-            PlayerDetail(player: players[2]).environment(\.sizeCategory, .extraSmall).previewDevice("iPhone SE")
-            PlayerDetail(player: players[2]).environment(\.sizeCategory, .extraExtraExtraLarge).previewDevice("iPhone 11 Max Pro")
-            PlayerDetail(player: players[2]).environment(\.sizeCategory, .extraSmall).previewDevice("iPhone 11 Max Pro")
+            PlayerDetail(player: players[2]).previewDevice("iPod touch (7th generation)").previewDisplayName("iPod touch (7th generation)")
+            PlayerDetail(player: players[2]).previewDevice("iPhone SE (1st generation)").previewDisplayName("iPhone SE (1st generation)")
+            PlayerDetail(player: players[2]).previewDevice("iPhone 11 Pro Max").previewDisplayName("iPhone 11 Pro Max")
         }
     }
 }

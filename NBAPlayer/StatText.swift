@@ -23,6 +23,10 @@ struct StatText: View {
 
 struct StatText_Previews: PreviewProvider {
     static var previews: some View {
-        StatText(statName: "Age", statValue: "32")
+        Group {
+            StatText(statName: "Age", statValue: "32").environment(\.sizeCategory, .extraSmall).previewDisplayName("Extra Small")
+            StatText(statName: "Age", statValue: "32").environment(\.sizeCategory, .extraExtraExtraLarge).previewDisplayName("Extra Large")
+        }
+        
     }
 }
