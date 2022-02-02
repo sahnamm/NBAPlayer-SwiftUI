@@ -13,7 +13,16 @@ struct PlayerDetail: View {
     
     var body: some View {
         VStack{
-            Image(player.team.imageName).resizable().aspectRatio(contentMode: .fit)
+//            Image(player.team.imageName).resizable().aspectRatio(contentMode: .fit)
+            
+            Rectangle()
+                .fill(.red)
+                .frame(height: UIScreen.main.bounds.width * 0.6)
+                .overlay(
+                    Image(player.team.imageName)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                )
             
             Image(player.imageName).clipShape(Circle()).background(Circle().foregroundColor(.white)).overlay(Circle().stroke(Color.white, lineWidth: 4)).offset(x: 0, y:-90).padding(.bottom, -70).shadow(radius: 15)
             
@@ -33,7 +42,7 @@ struct ContentView_Previews: PreviewProvider {
         Group {
             PlayerDetail(player: players[2]).previewDevice("iPod touch (7th generation)").previewDisplayName("iPod touch (7th generation)")
             PlayerDetail(player: players[2]).previewDevice("iPhone SE (1st generation)").previewDisplayName("iPhone SE (1st generation)")
-            PlayerDetail(player: players[2]).previewDevice("iPhone 11 Pro Max").previewDisplayName("iPhone 11 Pro Max")
+            PlayerDetail(player: players[2]).previewDevice("iPhone 11 Pro Max").previewDisplayName("iPhone 11 Pro Max").previewInterfaceOrientation(.portrait)
         }
     }
 }
